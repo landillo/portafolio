@@ -1,0 +1,27 @@
+
+.footer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(to right, #210d3e, #253066);
+    color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    padding-top: 2rem;
+    bottom: 0;
+
+  }
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer ul li {
+    display: inline;
+    margin: 0 1rem;
+  }
+  .footer ul li a h5{
+    color: white;
+    text-decoration: none;
+  }
+  
