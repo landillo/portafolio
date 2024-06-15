@@ -18,14 +18,15 @@
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
     max-width: 900px;
     width: 100%;
-  }
-  
-  .profile-section {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
-  .profile-section img.avatar {
+    }
+    
+    .profile-section {
+      flex: 1;
+      margin-right: 20px;
+      }
+      
+    .profile-section img.avatar {
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.600);
     width: 100px;
     height: 100px;
     border-radius: 50%;

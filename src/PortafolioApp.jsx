@@ -11,8 +11,8 @@ export const PortafolioApp = () => {
   return (
     <>
       <NavBar />
-      <div className='main-container' >
-        <Element name='home' className='section' key="home">
+      <div>
+        <Element name='home'  key="home">
           <HomePage />
         </Element>
         <Element name='about' className='section' key="about">

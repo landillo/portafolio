@@ -1,20 +1,37 @@
 // import { Link } from 'react-router-dom';
 import { Link } from 'react-scroll';
+import { useState } from 'react';
 import './Styles.css';
 
 
 export const NavBar = () => {
+  const [ menuOpen, setMenuOpen ] = useState(false);
   const navOffset = 0;
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
       <nav className='nav'>
         <Link to="home" className="nav-name" smooth={true} duration={500}>
           <h2>Orlando Ledón</h2>
         </Link>
-        <ul className='nav-links'>
-          <li key="home"><Link to="home" className="nav-button" smooth={true} duration={500} offset={navOffset}>Home</Link></li>
-          <li key="about"><Link to="about" className="nav-button" smooth={true} duration={500} offset={navOffset}>About</Link></li>
-          <li key="contac"><Link to="skills" className="nav-button" smooth={true} duration={500} offset={navOffset}>Skills</Link></li>
-          <li key="projects"><Link to="projects" className="nav-button" smooth={true} duration={500} offset={navOffset}>Projects</Link></li>
+        <input type="checkbox" id="checkbox" className="checkbox" checked={menuOpen} onChange={toggleMenu} />
+          <label htmlFor="checkbox" className="toggle">
+            <div className="bars" id="bar1"></div>
+            <div className="bars" id="bar2"></div>
+            <div className="bars" id="bar3"></div>
+          </label>
+        <ul className={`nav-links ${ menuOpen ? 'open' : '' }`}>
+          <li key="home"><Link to="home" className="nav-button" smooth={true} duration={500} offset={navOffset} onClick={closeMenu}>Home</Link></li>
+          <li key="about"><Link to="about" className="nav-button" smooth={true} duration={500} offset={navOffset} onClick={closeMenu}>About</Link></li>
+          <li key="contac"><Link to="skills" className="nav-button" smooth={true} duration={500} offset={navOffset} onClick={closeMenu}>Skills</Link></li>
+          <li key="projects"><Link to="projects" className="nav-button" smooth={true} duration={500} offset={navOffset} onClick={closeMenu}>Projects</Link></li>
         </ul>
       </nav>
   )
