@@ -2,6 +2,7 @@
 import { Link } from 'react-scroll';
 import { useState } from 'react';
 import './Styles.css';
+import { ToggleSwitch } from '../ToggleSwitch/ToggleSwitch';
 
 
 export const NavBar = () => {
@@ -14,6 +15,13 @@ export const NavBar = () => {
 
   const closeMenu = () => {
     setMenuOpen(false);
+  };
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleToggle = () => {
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
   };
 
   return (
@@ -32,7 +40,9 @@ export const NavBar = () => {
           <li key="about"><Link to="about" className="nav-button" smooth={true} duration={500} offset={navOffset} onClick={closeMenu}>About</Link></li>
           <li key="contac"><Link to="skills" className="nav-button" smooth={true} duration={500} offset={navOffset} onClick={closeMenu}>Skills</Link></li>
           <li key="projects"><Link to="projects" className="nav-button" smooth={true} duration={500} offset={navOffset} onClick={closeMenu}>Projects</Link></li>
+          <li><ToggleSwitch isDarkMode={isDarkMode} onToggle={handleToggle} className="toggle-switch"/></li>
         </ul>
+        
       </nav>
   )
 }

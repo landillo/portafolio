@@ -115,3 +115,53 @@
 .button:hover {
   background: #17a189;
 }
+@media (max-width: 768px) {
+  .card {
+    width: 250px;
+    height: 350px;
+  }
+
+  .tech {
+    width: 40px;
+  }
+
+  .tech-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .button {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 200px;
+    height: 300px;
+  }
+
+  .card-back h3,
+  .card-front .project-title-overlay h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-back p,
+  .project-tech span {
+    font-size: 0.8rem;
+  }
+
+  .tech {
+    width: 30px;
+  }
+
+  .tech-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}

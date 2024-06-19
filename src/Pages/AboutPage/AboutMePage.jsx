@@ -1,4 +1,5 @@
 import './Styles.css';
+import profileImagen from '../../../assets/perfil.jpeg';
 
 export const AboutMePage = () => {
   return (
@@ -6,7 +7,7 @@ export const AboutMePage = () => {
       <section className="about-me">
         <div className="about-me-content">
           <div className="profile-section">
-            <img src="../../../assets/perfil.jpeg" alt="Avatar" className="avatar" />
+            <img src={profileImagen} alt="Avatar" className="avatar" />
             <h2>About me</h2>
             <p>
               <a href="" target="_blank" rel="noopener noreferrer">México</a> |

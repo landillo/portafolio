@@ -1,12 +1,31 @@
+:root {
+  --background-main-dark: linear-gradient(to right, #210d3e, #253066);
+  --text-main-dark: #ffffff;
+  --component-bg-dark: #1a1e39;
+  --button-main-dark: #1db9a0;
+  --button-hover-dark: #17a189;
+
+  --background-main-light: linear-gradient(to right, #f0f0f0, #ffffff);
+  --text-main-light: #333333;
+  --component-bg-light: #ffffff;
+  --button-main-light: #4d94c4;
+  --button-hover-light: #1db9a0;
+
+  --background-color: #f0f0f0;
+  --text-color: #333;
+  --toggle-bg: rgb(4,52,73);
+  --toggle-checked-bg: #253066;
+}
 body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
     color: #FFF;
-    background: linear-gradient(to right, #210d3e, #253066);
+    background: var(--background-main-dark);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -28,6 +47,7 @@ body, html {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+    box-sizing: border-box;
   }
   
   .section {

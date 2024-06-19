@@ -45,6 +45,7 @@
 .nav-links {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 30px;
 }
 ul.nav-links {
@@ -135,3 +136,4 @@ ul.nav-links {
     display: flex;
   }
 }
+
