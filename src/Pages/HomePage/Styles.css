@@ -1,13 +1,15 @@
 .hero {
   height: 100vh;
   background: var(--background-main-dark);
-  background-size: cover;
-  background-position: center;
+  background-size: 65%;
+  background-position: 105% center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--text-main-dark);
+  /* color: var(--text-main-dark); */
+  color: var(--link-hover-light);
   text-align: center;
   position: relative;
   z-index: 1;

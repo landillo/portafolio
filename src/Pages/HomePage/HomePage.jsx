@@ -1,5 +1,5 @@
 import './Styles.css';
-import backgroundImage from '../../../assets/mainBackground.jpeg';
+import backgroundImage from '../../../assets/heroNew.svg';
 
 export const HomePage = () => {
   return (

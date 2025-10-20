@@ -86,7 +86,7 @@
     position: absolute;
     left: 10px;
     top: 5px;
-    transform-origin: 33px 5px;
+    transform-origin: 33px 8px;
     background-color: transparent;
     box-shadow: 5px -1px 0px #fff;
     filter: blur(0px);
@@ -141,7 +141,7 @@
                 0px 0px 20px #f5deb4,
                 0px 0px 30px #f5deb4,
                 inset 0px 0px 2px #efd3a3;
-    transform-origin: 33px 5px;
+    transform-origin: 33px 8px;
     animation: moon .7s forwards ease;
   }
   

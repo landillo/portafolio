@@ -3,11 +3,21 @@ import { Link } from 'react-scroll';
 import { useState } from 'react';
 import './Styles.css';
 import { ToggleSwitch } from '../ToggleSwitch/ToggleSwitch';
+import { useEffect } from 'react';
 
 
 export const NavBar = () => {
   const [ menuOpen, setMenuOpen ] = useState(false);
   const navOffset = 0;
+
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem('theme') === 'dark';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
+  
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -17,11 +27,11 @@ export const NavBar = () => {
     setMenuOpen(false);
   };
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
   const handleToggle = () => {
     setIsDarkMode(!isDarkMode);
-    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+    const newTheme = !isDarkMode ? 'dark'  : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
   };
 
   return (
@@ -40,7 +50,7 @@ export const NavBar = () => {
           <li key="about"><Link to="about" className="nav-button" smooth={true} duration={500} offset={navOffset} onClick={closeMenu}>About</Link></li>
           <li key="contac"><Link to="skills" className="nav-button" smooth={true} duration={500} offset={navOffset} onClick={closeMenu}>Skills</Link></li>
           <li key="projects"><Link to="projects" className="nav-button" smooth={true} duration={500} offset={navOffset} onClick={closeMenu}>Projects</Link></li>
-          <li><ToggleSwitch isDarkMode={isDarkMode} onToggle={handleToggle} className="toggle-switch"/></li>
+          <li><ToggleSwitch isDarkMode={isDarkMode} onToggle={handleToggle} className="toggle-switch" /></li>
         </ul>
         
       </nav>

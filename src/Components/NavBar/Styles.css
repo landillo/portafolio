@@ -6,7 +6,7 @@
   width: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(33, 13, 62, 0.5);
+  background-color: var(--navbar-bg-color);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
   height: 60px;
   z-index: 1000;
@@ -24,7 +24,7 @@
 
 
 .nav .nav-name h2 {
-  color: #fff;
+  color: var(--background-color);
   font-weight: 400;
 }
 
@@ -110,7 +110,7 @@ ul.nav-links {
   position: absolute;
   top: 60px;
   right: 0;
-  background-color: rgba(33, 13, 62, 0.9);
+  background-color: var(--navbar-bg-color);
   width: 100%;
   height: auto;
   justify-content: center;

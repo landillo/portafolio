@@ -1,35 +1,80 @@
 :root {
   --background-main-dark: linear-gradient(to right, #210d3e, #253066);
+  --background-card-back-dark: #1a1e39;
   --text-main-dark: #ffffff;
   --component-bg-dark: #1a1e39;
   --button-main-dark: #1db9a0;
   --button-hover-dark: #17a189;
-
-  --background-main-light: linear-gradient(to right, #f0f0f0, #ffffff);
+  --navbar-bg-color-dark: rgba(33, 13, 62, 0.5);
+  
+  --background-main-light: linear-gradient(to right, #daf3ff, #80b2c9);
+  /* --background-main-light: linear-gradient(to right, #c2d9e4, #80b2c9); */
+  --background-card-back-light: #daf3ff;
   --text-main-light: #333333;
   --component-bg-light: #ffffff;
   --button-main-light: #4d94c4;
   --button-hover-light: #1db9a0;
-
-  --background-color: #f0f0f0;
-  --text-color: #333;
+  --link-light: #007acc;
+  --link-hover-light: #005999;
+  --highlight-light: #f5f5f5;
+  --shadow-light: rgba(0, 0, 0, 0.2); 
+  --navbar-bg-color-light: rgba(128, 178, 201, 0.8);
+  
+  
+  --background-color: var(--background-main-dark);
   --toggle-bg: rgb(4,52,73);
   --toggle-checked-bg: #253066;
+}
+
+[data-theme="light"] {
+  --background-color: var(--background-main-light);
+  --background-card-back:var(--background-card-back-light);
+  /* --background-card-back:var(--highlight-color); */
+  --text-color: var(--text-main-light);
+  --text-subt-color: #4d94c4;
+  --text-subt-skill-color:#4d94c4;
+  --text-footer-color: var(--text-main-light);
+  --component-bg: var(--highlight-light);
+  --button-main: var(--button-main-light);
+  --button-hover: var(--button-hover-light);
+  --link-color: var(--link-light);
+  --link-hover-color: var(--link-hover-light);
+  --box-shadow: var(--shadow-light);
+  --highlight-color: var(--highlight-light);
+  --navbar-bg-color:var(--navbar-bg-color-light);
+}
+[data-theme="dark"] {
+  --background-color: var(--background-main-dark);
+  --background-card-back:var(--background-card-back-dark);
+  --text-color: var(--text-main-dark);
+  --text-subt-color: var(--text-main-dark);
+  --text-subt-skill-color: #1db9a0;
+  --text-footer-color: var(--text-main-dark);
+  --component-bg: var(--component-bg-dark);
+  --button-main: var(--button-main-dark);
+  --button-hover: var(--button-hover-dark);
+  --link-color: #1db9a0;
+  --link-hover-color: #4d94c4;
+  --box-shadow: rgba(0, 0, 0, 0.705);
+  --highlight-color: #1a1e39;
+  --navbar-bg-color:var(--navbar-bg-color-dark);
 }
 body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    color: #FFF;
-    background: var(--background-main-dark);
+    color: var(--text-color);
+    background: var(--background-color);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     overflow-x: hidden;
+    transition: background-color 1.5s ease, color 1.5s ease;
   }
   
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    transition: color 1.5s ease;
   }
   
   a {
