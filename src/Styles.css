@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700&display=swap');
+
+
 :root {
   --background-main-dark: linear-gradient(to right, #210d3e, #253066);
   --background-card-back-dark: #1a1e39;
@@ -10,7 +13,7 @@
   --background-main-light: linear-gradient(to right, #daf3ff, #80b2c9);
   /* --background-main-light: linear-gradient(to right, #c2d9e4, #80b2c9); */
   --background-card-back-light: #daf3ff;
-  --text-main-light: #333333;
+  --text-main-light: #1e1e1e;
   --component-bg-light: #ffffff;
   --button-main-light: #4d94c4;
   --button-hover-light: #1db9a0;
@@ -24,12 +27,16 @@
   --background-color: var(--background-main-dark);
   --toggle-bg: rgb(4,52,73);
   --toggle-checked-bg: #253066;
+
+    /* Font families */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
 }
 
 [data-theme="light"] {
   --background-color: var(--background-main-light);
   --background-card-back:var(--background-card-back-light);
-  /* --background-card-back:var(--highlight-color); */
   --text-color: var(--text-main-light);
   --text-subt-color: #4d94c4;
   --text-subt-skill-color:#4d94c4;
@@ -42,7 +49,11 @@
   --box-shadow: var(--shadow-light);
   --highlight-color: var(--highlight-light);
   --navbar-bg-color:var(--navbar-bg-color-light);
+  --nav-text-color: #ffffff;
+  --nav-hover-color: #005999;
+  /* --background-card-back:var(--highlight-color); */
 }
+
 [data-theme="dark"] {
   --background-color: var(--background-main-dark);
   --background-card-back:var(--background-card-back-dark);
@@ -58,11 +69,14 @@
   --box-shadow: rgba(0, 0, 0, 0.705);
   --highlight-color: #1a1e39;
   --navbar-bg-color:var(--navbar-bg-color-dark);
+  --nav-text-color: #ffffff;
+  --nav-hover-color: #1db9a0;
 }
+ 
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-body);
     color: var(--text-color);
     background: var(--background-color);
     background-attachment: fixed;
@@ -71,9 +85,13 @@ body, html {
     overflow-x: hidden;
     transition: background-color 1.5s ease, color 1.5s ease;
   }
-  
+  html {
+    font-size: clamp(14px, 1vw + 0.5rem, 18px);
+  }
+
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    font-family: var(--font-heading);
     transition: color 1.5s ease;
   }
   
@@ -81,12 +99,39 @@ body, html {
     text-decoration: none;
     color: inherit;
   }
+  a, button {
+   transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  }
+  a:hover, button:hover {
+    transform: translateY(-1px);
+  }
+
   
   button {
     font-family: inherit;
     cursor: pointer;
   }
-  
+  h1 {
+   font-size: 2.5rem;
+   font-weight: 700;
+  }
+
+  h2 {
+   font-size: 2rem;
+   font-weight: 600;
+  }
+
+  h3 {
+   font-size: 1.5rem;
+   font-weight: 500;
+  }
+
+  p, li, button, a {
+   font-size: 1rem;
+   font-weight: 400;
+   line-height: 1.6;
+  }
+
   .container {
     width: 100%;
     max-width: 1200px;

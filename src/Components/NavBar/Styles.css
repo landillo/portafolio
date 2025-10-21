@@ -11,6 +11,8 @@
   height: 60px;
   z-index: 1000;
   padding: 0 1rem;
+  backdrop-filter: blur(6px);
+
 }
 
 .nav .nav-name,
@@ -18,28 +20,53 @@
   text-decoration: none;
   padding: 10px;
   font-size: 18px;
-  color: #fff;
-  transition: transform 0.3s ease, text-decoration 0.3s ease, color 0.3s ease;
+  color: var(--nav-text-color);
+  transition: color 0.3s ease;
 }
-
 
 .nav .nav-name h2 {
-  color: var(--background-color);
-  font-weight: 400;
+  color: var(--nav-text-color);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+.nav .nav-name {
+  position: relative;
+  display: inline-block;
 }
 
-.nav .nav-name:hover {
-  cursor: pointer;
+
+.nav .nav-name:hover h2 {
+  color: var(--nav-hover-color);
+  text-shadow: 0 0 8px rgba(29, 185, 160, 0.5);
 }
 
 .nav .nav-name span {
   font-weight: bold;
 }
 
-.nav .nav-button:hover {
-  text-decoration: underline;
-  cursor: pointer;
-  color: goldenrod;
+.nav-button {
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--nav-hover-color);
+  transition: width 0.3s ease;
+}
+
+.nav-button:hover::after {
+  width: 100%;
+}
+
+.nav-button:hover {
+  color: var(--nav-hover-color);
 }
 
 .nav-links {
