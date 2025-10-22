@@ -8,18 +8,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* color: var(--text-main-dark); */
   color: var(--link-hover-light);
   text-align: center;
   position: relative;
   z-index: 1;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
+
+/* ===== Headings ===== */
 .hero h1 {
   display: flex;
   font-size: 4rem;
   margin-bottom: 0.5rem;
   align-self: flex-start;
   margin-left: 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: color 0.4s ease;
 }
 
 .hero h2 {
@@ -28,66 +34,197 @@
   margin-bottom: 1.5rem;
   align-self: flex-start;
   margin-left: 100px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.4s ease;
 }
 
+/* ===== Color per Theme ===== */
+[data-theme="light"] .hero h1,
+[data-theme="light"] .hero h2 {
+  color: #1a3b5d;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+[data-theme="dark"] .hero h1,
+[data-theme="dark"] .hero h2 {
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+/* ===== Buttons Container ===== */
 .hero .buttons {
   display: flex;
   gap: 1rem;
   margin-left: 60px;
+  margin-top: 1rem;
+  align-items: center;
 }
 
-.hero button,
-.hero a {
-  padding: 10px 20px;
-  border: 2px solid white;
-  border-radius: 5px;
-  background: none;
-  color: white;
-  transition: background 0.3s, color 0.3s;
+/* ===== Download CV Button ===== */
+.hero .btn.cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background: var(--button-main);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: background 0.35s ease, color 0.35s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
 
-.hero button:hover,
-.hero a:hover {
-  background: white;
-  color: #333;
+.hero .btn.cv:hover {
+  background: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  color: #fff;
 }
 
+[data-theme="light"] .hero .btn.cv {
+  background: var(--button-main-light);
+}
+
+[data-theme="light"] .hero .btn.cv:hover {
+  background: var(--button-hover-light);
+}
+
+/* ===== Icon Buttons (LinkedIn, GitHub) ===== */
+.hero .icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: var(--icon-bg-dark);
+  transition: background-color 0.35s ease, transform 0.12s ease, color 0.25s ease, border-color 0.25s ease;
+  color: var(--text-color);
+  text-decoration: none;
+  box-shadow: 0 6px 14px var(--icon-shadow);
+}
+
+.hero .icon-button .icon {
+  font-size: 1.25rem;
+}
+
+/* LinkedIn */
+.hero .icon-button.linkedin {
+  color: #0077b5;
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+.hero .icon-button.linkedin:hover {
+  background: #0077b5;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* GitHub */
+.hero .icon-button.github {
+  color: #24292e;
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+.hero .icon-button.github:hover {
+  background: #333;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ===== Theme Overrides ===== */
+[data-theme="light"] .hero .icon-button {
+  background: var(--icon-bg-light);
+  border-color: rgba(0, 0, 0, 0.04);
+  color: var(--text-color);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .hero .icon-button {
+  background: var(--icon-bg-dark);
+  border-color: rgba(255, 255, 255, 0.03);
+  color: var(--text-color);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== Smooth transitions ===== */
+.hero,
+.hero h1, .hero h2,
+.hero .btn.cv,
+.hero .icon-button {
+  transition: color 0.4s ease, background-color 0.4s ease, box-shadow 0.35s ease, transform 0.25s ease;
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .hero {
-    padding: 1rem;
+    padding: 2rem 1rem;
+    background-size: 95%;
+    background-position: center 60%;
+    justify-content: flex-start; 
+    align-items: flex-start;
   }
-  /* .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
-  }  */
 
   .hero h1 {
     font-size: 2.5rem;
-    margin-left: 0;
+    margin-left: 1.5rem;
+    margin-top: 12vh; 
+    text-align: left;
   }
 
   .hero h2 {
     font-size: 1.5rem;
-    margin-left: 0;
+    margin-left: 2.5rem;
+    text-align: left;
   }
 
   .hero .buttons {
     flex-direction: column;
-    align-items: center;
-    margin-left: 0;
-    gap: 0.5rem;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+    margin-left: 1.5rem;
+    margin-top: 10rem;
   }
 
-  .hero button,
-  .hero a {
+  .hero .btn.cv,
+  .hero .icon-button {
     width: 80%;
-    margin-bottom: 1rem;
+    justify-content: center;
+    border-radius: 8px;
+    height: auto;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  /* Colores de los botones en mobile */
+  .hero .icon-button.linkedin {
+    background: #0077b5;
+    color: #fff;
+  }
+
+  .hero .icon-button.github {
+    background: #333;
+    color: #fff;
+  }
+
+  .hero .btn.cv {
+    background: var(--button-main-light);
+  }
+
+  .hero .btn.cv:hover {
+    background: var(--button-hover-light);
   }
 }
 
@@ -100,9 +237,13 @@
     font-size: 1.2rem;
   }
 
-  .hero button,
-  .hero a {
-    width: 80%;
+  .hero .btn.cv,
+  .hero .icon-button {
+    width: 85%;
+  }
+
+  .hero {
+    background-position: center 40%;
+    background-size: 130%;
   }
 }
- 

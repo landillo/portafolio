@@ -32,6 +32,12 @@
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
 
+    /* Icon button background helpers */
+  --icon-bg-light: rgba(77, 148, 196, 0.12);   /* suave azul claro para modo light */
+  --icon-bg-dark: rgba(29, 185, 160, 0.12);    /* suave verde azulado para modo dark */
+  --icon-shadow: rgba(0,0,0,0.12);
+
+
 }
 
 [data-theme="light"] {
