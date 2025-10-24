@@ -6,7 +6,10 @@ export const SkillsPage = () => {
     <>
       <section className="skills">
         <div className="skills-content">
-          <h2>Tecnologías</h2>
+          <p className="skills-description">
+              These are the technologies and tools I use in my daily work to build fast, scalable, and modern applications.
+          </p>
+          <h2>Technologies</h2>
           <div className="skills-icons">
             { techData.map(( tech, index) => (
               <div className='tech-stack' key={index}>
@@ -15,7 +18,7 @@ export const SkillsPage = () => {
               </div>
             )) }
           </div>
-          <h2>Herramientas</h2>
+          <h2>Tools</h2>
           <div className="skills-icons">
             { toolsData.map(( tool, index) => (
               <div className='tech-stack' key={index}>

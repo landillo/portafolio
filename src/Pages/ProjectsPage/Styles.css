@@ -116,6 +116,17 @@
 .button:hover {
   background: #17a189;
 }
+/* ===== Sombras adaptadas por tema ===== */
+[data-theme="light"] .card-front,
+[data-theme="light"] .card-back {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .card-front,
+[data-theme="dark"] .card-back {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
 @media (max-width: 768px) {
   .card {
     width: 250px;
