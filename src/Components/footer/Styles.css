@@ -1,4 +1,154 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 0 0 10px 4px var(--box-shadow);
+  font-size: 1rem;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  flex-wrap: wrap;
+}
 
+/* ===== Zonas ===== */
+.footer-left,
+.footer-center,
+.footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-right {
+  justify-content: flex-end;
+}
+
+/* ===== Mensaje ===== */
+.footer-message {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: color 0.4s ease;
+}
+
+/* ===== Texto copyright ===== */
+.footer-text {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  transition: color 0.4s ease;
+}
+
+/* ===== Íconos ===== */
+.footer-icons {
+  display: flex;
+  gap: 1.4rem;
+  justify-content: flex-start;
+}
+
+.footer-icons .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--icon-bg-light);
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: transform 0.25s ease, background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 6px 16px var(--box-shadow);
+}
+
+.footer-icons .icon:hover {
+  transform: translateY(-3px);
+}
+
+/* Hover por red */
+.icon.linkedin:hover {
+  background: #0077b5;
+  color: #fff;
+}
+
+.icon.github:hover {
+  background: #333;
+  color: #fff;
+}
+
+.icon.email:hover {
+  background: #e74c3c;
+  color: #fff;
+}
+
+/* ===== Modo oscuro ===== */
+[data-theme="dark"] .footer {
+  background: var(--background-main-dark);
+  color: var(--text-color);
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .footer-icons .icon {
+  background: var(--icon-bg-dark);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+/* ===== Hover en modo oscuro ===== */
+[data-theme="dark"] .icon.linkedin:hover {
+  background: #0a66c2; /* tono más brillante */
+  color: #fff;
+}
+
+[data-theme="dark"] .icon.github:hover {
+  background: #fafafa; /* fondo claro sobre fondo oscuro */
+  color: #000;
+}
+
+[data-theme="dark"] .icon.email:hover {
+  background: #ff6b6b; /* rojo más vivo */
+  color: #fff;
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    justify-content: center;
+  }
+
+  .footer-icons {
+    justify-content: center;
+  }
+
+  .footer-icons .icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+
+  .footer-message {
+    font-size: 0.9rem;
+  }
+
+  .footer-text {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* 
 .footer {
     display: flex;
     justify-content: center;
@@ -32,4 +182,4 @@
   .footer ul li a h5 {
     font-size: 14px;
   }
-}
+} */
